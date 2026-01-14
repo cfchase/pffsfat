@@ -1,7 +1,7 @@
-# __PROJECT_TITLE__ Makefile
+# Pffsfat Makefile
 
 # Container Registry Operations
-REGISTRY ?= __REGISTRY__
+REGISTRY ?= quay.io/cfchase
 TAG ?= latest
 
 # Auto-detect container tool (uses timeout to prevent hanging)
@@ -13,7 +13,7 @@ export CONTAINER_TOOL
 
 # Default target
 help: ## Show this help message
-	@echo "__PROJECT_TITLE__ - Available commands:"
+	@echo "Pffsfat - Available commands:"
 	@echo ""
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
 
@@ -88,31 +88,31 @@ db-status: ## Check PostgreSQL database status
 
 db-init: ## Initialize database schema with Alembic migrations
 	@echo "Running database migrations..."
-	@cd backend && POSTGRES_SERVER=localhost POSTGRES_USER=app POSTGRES_PASSWORD=changethis POSTGRES_DB=__DB_NAME__ uv run alembic upgrade head
+	@cd backend && POSTGRES_SERVER=localhost POSTGRES_USER=app POSTGRES_PASSWORD=changethis POSTGRES_DB=pffsfat uv run alembic upgrade head
 	@echo "Database initialized!"
 
 db-migrate-create: ## Create a new Alembic migration (usage: make db-migrate-create MSG="description")
 	@if [ -z "$(MSG)" ]; then echo "Error: MSG is required. Usage: make db-migrate-create MSG=\"description\""; exit 1; fi
-	@cd backend && POSTGRES_SERVER=localhost POSTGRES_USER=app POSTGRES_PASSWORD=changethis POSTGRES_DB=__DB_NAME__ uv run alembic revision --autogenerate -m "$(MSG)"
+	@cd backend && POSTGRES_SERVER=localhost POSTGRES_USER=app POSTGRES_PASSWORD=changethis POSTGRES_DB=pffsfat uv run alembic revision --autogenerate -m "$(MSG)"
 	@echo "Migration created! Review the file in backend/alembic/versions/"
 
 db-migrate-upgrade: ## Apply all pending migrations
 	@echo "Applying migrations..."
-	@cd backend && POSTGRES_SERVER=localhost POSTGRES_USER=app POSTGRES_PASSWORD=changethis POSTGRES_DB=__DB_NAME__ uv run alembic upgrade head
+	@cd backend && POSTGRES_SERVER=localhost POSTGRES_USER=app POSTGRES_PASSWORD=changethis POSTGRES_DB=pffsfat uv run alembic upgrade head
 
 db-migrate-downgrade: ## Rollback one migration
 	@echo "Rolling back one migration..."
-	@cd backend && POSTGRES_SERVER=localhost POSTGRES_USER=app POSTGRES_PASSWORD=changethis POSTGRES_DB=__DB_NAME__ uv run alembic downgrade -1
+	@cd backend && POSTGRES_SERVER=localhost POSTGRES_USER=app POSTGRES_PASSWORD=changethis POSTGRES_DB=pffsfat uv run alembic downgrade -1
 
 db-migrate-history: ## Show migration history
-	@cd backend && POSTGRES_SERVER=localhost POSTGRES_USER=app POSTGRES_PASSWORD=changethis POSTGRES_DB=__DB_NAME__ uv run alembic history
+	@cd backend && POSTGRES_SERVER=localhost POSTGRES_USER=app POSTGRES_PASSWORD=changethis POSTGRES_DB=pffsfat uv run alembic history
 
 db-migrate-current: ## Show current migration revision
-	@cd backend && POSTGRES_SERVER=localhost POSTGRES_USER=app POSTGRES_PASSWORD=changethis POSTGRES_DB=__DB_NAME__ uv run alembic current
+	@cd backend && POSTGRES_SERVER=localhost POSTGRES_USER=app POSTGRES_PASSWORD=changethis POSTGRES_DB=pffsfat uv run alembic current
 
 db-seed: ## Seed database with test data (users and items)
 	@echo "Seeding database with test data..."
-	@cd backend && POSTGRES_SERVER=localhost POSTGRES_USER=app POSTGRES_PASSWORD=changethis POSTGRES_DB=__DB_NAME__ uv run python scripts/seed_test_data.py
+	@cd backend && POSTGRES_SERVER=localhost POSTGRES_USER=app POSTGRES_PASSWORD=changethis POSTGRES_DB=pffsfat uv run python scripts/seed_test_data.py
 	@echo "Test data created!"
 
 # Building

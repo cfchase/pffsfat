@@ -47,10 +47,6 @@ jobs:
         with:
           node-version: '20'
 
-      # __TEMPLATE_ONLY_START__
-      - name: Rename project (template CI only)
-        run: make rename PROJECT=patternfly-full-stack-fastapi-template REGISTRY=quay.io/cfchase YES=1
-      # __TEMPLATE_ONLY_END__
 
       - name: Install dependencies
         run: make setup
@@ -71,10 +67,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # __TEMPLATE_ONLY_START__
-      - name: Rename project (template CI only)
-        run: make rename PROJECT=patternfly-full-stack-fastapi-template REGISTRY=quay.io/cfchase YES=1
-      # __TEMPLATE_ONLY_END__
 
       - name: Check version sync
         run: |
@@ -108,10 +100,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # __TEMPLATE_ONLY_START__
-      - name: Rename project (template CI only)
-        run: make rename PROJECT=patternfly-full-stack-fastapi-template REGISTRY=quay.io/cfchase YES=1
-      # __TEMPLATE_ONLY_END__
 
       - name: Extract project info
         id: info
@@ -172,10 +160,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # __TEMPLATE_ONLY_START__
-      - name: Rename project (template CI only)
-        run: make rename PROJECT=patternfly-full-stack-fastapi-template REGISTRY=quay.io/cfchase YES=1
-      # __TEMPLATE_ONLY_END__
 
       - name: Extract project info
         id: info

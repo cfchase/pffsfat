@@ -1,5 +1,5 @@
 {
-  "name": "__PROJECT_NAME__",
+  "name": "pffsfat",
   "version": "1.0.0",
   "description": "A full-stack template with React frontend and FastAPI backend",
   "scripts": {

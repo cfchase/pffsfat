@@ -7,7 +7,7 @@ resources:
   # To use in-cluster postgres (not recommended for prod):
   # - ../../postgres/database/in-cluster
 
-namespace: __PROJECT_NAME__-prod
+namespace: pffsfat-prod
 
 labels:
   - pairs:
@@ -34,7 +34,7 @@ generatorOptions:
   disableNameSuffixHash: true
 
 images:
-  - name: __REGISTRY__/__PROJECT_NAME__-backend
+  - name: quay.io/cfchase/pffsfat-backend
     newTag: prod
-  - name: __REGISTRY__/__PROJECT_NAME__-frontend
+  - name: quay.io/cfchase/pffsfat-frontend
     newTag: prod

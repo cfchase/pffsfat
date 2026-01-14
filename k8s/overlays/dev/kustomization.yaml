@@ -6,7 +6,7 @@ resources:
   # In-cluster PostgreSQL for development
   - ../../postgres/database/in-cluster
 
-namespace: __PROJECT_NAME__-dev
+namespace: pffsfat-dev
 
 labels:
   - pairs:
@@ -29,7 +29,7 @@ generatorOptions:
   disableNameSuffixHash: true
 
 images:
-  - name: __REGISTRY__/__PROJECT_NAME__-backend
+  - name: quay.io/cfchase/pffsfat-backend
     newTag: latest
-  - name: __REGISTRY__/__PROJECT_NAME__-frontend
+  - name: quay.io/cfchase/pffsfat-frontend
     newTag: latest

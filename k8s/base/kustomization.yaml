@@ -11,11 +11,11 @@ resources:
 
 labels:
   - pairs:
-      app.kubernetes.io/name: __PROJECT_NAME__
+      app.kubernetes.io/name: pffsfat
       app.kubernetes.io/version: "1.0.0"
 
 images:
-  - name: __REGISTRY__/__PROJECT_NAME__-backend
+  - name: quay.io/cfchase/pffsfat-backend
     newTag: latest
-  - name: __REGISTRY__/__PROJECT_NAME__-frontend
+  - name: quay.io/cfchase/pffsfat-frontend
     newTag: latest

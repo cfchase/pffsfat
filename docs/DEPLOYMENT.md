@@ -39,7 +39,7 @@ make db-seed-cluster           # Run seed data only
 
 ```makefile
 # Default values (can be overridden)
-REGISTRY ?= __REGISTRY__
+REGISTRY ?= quay.io/cfchase
 TAG ?= latest
 CONTAINER_TOOL ?= docker  # or podman
 ```

@@ -18,7 +18,7 @@ CONTAINER_NAME="app-postgres-dev"
 DB_PORT="${DB_PORT:-5432}"
 DB_USER="${POSTGRES_USER:-app}"
 DB_PASS="${POSTGRES_PASSWORD:-changethis}"
-DB_NAME="${POSTGRES_DB:-__DB_NAME__}"
+DB_NAME="${POSTGRES_DB:-pffsfat}"
 VOLUME_NAME="app-db-data"
 
 case "$1" in

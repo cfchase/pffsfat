@@ -366,7 +366,7 @@ wheels = [
 ]
 
 [[package]]
-name = "patternfly-full-stack-fastapi-template-backend"
+name = "pffsfat-backend"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [

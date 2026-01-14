@@ -3,11 +3,11 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "__PROJECT_NAME__-backend"
+name = "pffsfat-backend"
 version = "0.1.0"
-description = "FastAPI backend for __PROJECT_TITLE__"
+description = "FastAPI backend for Pffsfat"
 authors = [
-    {name = "__PROJECT_TITLE__ Team"},
+    {name = "Pffsfat Team"},
 ]
 requires-python = ">=3.11"
 classifiers = [

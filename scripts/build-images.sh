@@ -13,8 +13,8 @@ source "$SCRIPT_DIR/lib/common.sh"
 
 # Default values
 TAG=${1:-latest}
-REGISTRY=${2:-__REGISTRY__}
-PROJECT_NAME="__PROJECT_NAME__"
+REGISTRY=${2:-quay.io/cfchase}
+PROJECT_NAME="pffsfat"
 
 # Initialize container tool (uses common.sh detection with optional override from arg/env)
 init_container_tool "${3:-}" || exit 1

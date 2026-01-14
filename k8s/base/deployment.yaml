@@ -17,7 +17,7 @@ spec:
       serviceAccountName: app-proxy
       initContainers:
       - name: db-migration
-        image: __REGISTRY__/__PROJECT_NAME__-backend:latest
+        image: quay.io/cfchase/pffsfat-backend:latest
         imagePullPolicy: Always
         command:
         - /bin/sh
@@ -36,7 +36,7 @@ spec:
             cpu: "250m"
       containers:
       - name: frontend
-        image: __REGISTRY__/__PROJECT_NAME__-frontend:latest
+        image: quay.io/cfchase/pffsfat-frontend:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
@@ -66,7 +66,7 @@ spec:
             drop:
             - ALL
       - name: backend
-        image: __REGISTRY__/__PROJECT_NAME__-backend:latest
+        image: quay.io/cfchase/pffsfat-backend:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8000

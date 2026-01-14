@@ -1,4 +1,4 @@
-# __PROJECT_TITLE__
+# Pffsfat
 
 A production-ready full-stack application template with React frontend (Vite + PatternFly UI) and FastAPI backend, featuring PostgreSQL database, comprehensive testing, and OpenShift deployment.
 
@@ -236,7 +236,7 @@ POSTGRES_USER=app
 POSTGRES_PASSWORD=changethis
 POSTGRES_DB=app
 ENVIRONMENT=local
-PROJECT_NAME=__PROJECT_TITLE__
+PROJECT_NAME=Pffsfat
 FRONTEND_HOST=http://localhost:8080
 ```
 
